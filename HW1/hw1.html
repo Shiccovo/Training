@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW1: Netflix UI</title>
+</head>
+<style>
+    *{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+    }
+    .container{
+        position: relative;
+        width: 640px;
+        height: 480px;
+
+    }
+
+    .bg{
+        position: absolute;
+        width: 640px;
+        height: 480px;
+        object-fit:cover;
+        z-index: -1;
+    }
+
+    .popup{
+        position: absolute;
+        left: 50%;
+        bottom: 10%;
+        transform: translateX(-50%);
+
+        width: 350px;
+        height: 100px;
+
+        border-color: aliceblue;
+        border: 2px solid dimgrey;
+        border-radius: 12px;
+
+        display:flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: black;
+        
+
+        z-index: 2;
+    }
+
+    .dialog{
+        width: auto;
+        height: 85%;
+    }
+
+    .text-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap:12px;
+    }
+    #title{
+        color: white;
+    }
+    #status{
+        color: rgb(1, 106, 238);
+    }
+
+
+</style>
+
+
+<body>
+    <div class="container">
+            
+        <img src="backgroundimg.jpg" alt="Background-pics" class="bg">
+        <div class="popup">
+            <img src="picindialog.png" alt="" class="dialog">
+            <div class="text-container">
+                <div id="title">Stranger Things</div>
+                <div id="status">Downloading...</div>
+            </div>
+            <img id="download_icon" src="gifindialog.gif" alt="Downloading.." srcset="">
+        </div>
+    </div>
+    
+</body>
+</html>
