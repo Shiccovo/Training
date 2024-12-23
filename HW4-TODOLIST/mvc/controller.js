@@ -23,7 +23,6 @@ export const Controller = ((model, view) => {
 
 				if (todo) {
 					todo.completed = !todo.completed; 
-					console.log(`Todo "${todo.title}" completed:`, todo.completed);
 				}
 
 				e.target.classList.toggle('completed'); 
