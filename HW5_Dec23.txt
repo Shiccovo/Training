@@ -1,14 +1,14 @@
 Git clone projectPath: Clone a repo	
 Git pull -> Pull and update stuffs from github
-Git checkout [branchName] -> Wwitch branch  
+Git checkout [branchName] -> Switch branch  
 Git branch [branchName] -> Create a branch
 Git checkout -b [branchName] -> Switch to branch [branchName] , if it does not exist , create a new one named [branchName]
 Git branch:  List all branch existed in this repo	
 Git add . : Add all files modified to staging area
-Git commit : commit files modified
+Git commit : Commit files modified
 Git log : Check submission history
 Git Push: Push the modifies to github
-Git merge: combine 2 branches and create a merge commit
+Git merge: Combine 2 branches and create a merge commit
 Git reset vs git revert: Revert is more precise, u could check and submit what modifies u want dismiss. Reset is more destructive, it does cancel a entire submission.
 Git merge vs git rebase : I think merge is constructive, it does contain some method so you can solve the conflicts(if there is), rebase is destrutive, if something wrong already happen and the problem is complex, then we use rebase to solve it, rebase is disruptive so we hardly used at all.
 Git pull vs git fetch: Both fetch changes from remote repo but "pull" will merges them into branch, and "fetch " does not.
