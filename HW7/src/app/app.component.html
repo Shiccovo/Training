@@ -1,0 +1,19 @@
+<div class="app-container">
+
+  <div class="list-side">
+    <app-main
+    [items]="items"
+    [selectedItemId]="selectedItemId"
+    (selectedItemIdChange)="onSelectedItemIdChange($event)">
+  
+    </app-main>
+  
+  </div>
+  
+  <div class="item-side" >
+    
+    <app-item [item]="selectedItem" >
+    </app-item>
+  </div>
+
+</div>
