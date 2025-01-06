@@ -1,0 +1,13 @@
+img{
+    width: 150px ;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.year-lang-rating {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+}

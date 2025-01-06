@@ -1,0 +1,16 @@
+.movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+    background: #ffffff;
+  }
+
+
+app-movie-item{
+    width: 400px;
+    height: 500px;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 30px;
+}
