@@ -1,0 +1,8 @@
+<nav class="search-bar">
+    <form action="#" autocomplete="off" (ngSubmit)="onSubmit($event)">
+
+        <input type="text" class="search-input" placeholder="Search" name="search" [(ngModel)]="search">
+    </form>
+    <div *ngIf="showError" class="error-message"> Please enter a search term</div>
+</nav>
+

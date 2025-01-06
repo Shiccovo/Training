@@ -1,0 +1,36 @@
+.album-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.album-item {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 150px;
+  text-align: center;
+}
+
+.album-item img {
+  width: 100%;
+  height: auto;
+}
+
+.album-info {
+  padding: 10px;
+}
+
+.album-info h3 {
+  font-size: 16px;
+  margin: 10px 0 5px;
+}
+
+.album-info p {
+  font-size: 14px;
+  color: gray;
+  margin: 0;
+}

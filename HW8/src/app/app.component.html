@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="search">
+    <app-search-bar (searchResults)="onSearch($event)" (searchKeywordChange)="onSearchKeywordChange($event)"></app-search-bar>
+   </div>
+
+   <div class="notice">
+    <p *ngIf="resultCount === 0">Please enter a search term</p>
+    <p *ngIf="resultCount > 0">Found {{ resultCount }} results for "{{ searchKeyword }}"</p>
+  </div>
+
+  <div class="result">
+    <app-album-list [albums]="albums" ></app-album-list>
+  </div>
+
+</div>
