@@ -1,0 +1,8 @@
+<div class="search-container">
+  <mat-form-field appearance="fill">
+    <mat-label>Search for a book</mat-label>
+    <input matInput [(ngModel)]="bookName" (ngModelChange)="onSearchChange($event)" placeholder="Enter book name" />
+  </mat-form-field>
+
+  <app-booklist></app-booklist>
+</div>

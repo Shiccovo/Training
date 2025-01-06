@@ -1,0 +1,8 @@
+<div class="book-item">
+  <img [src]="book.bookPic" alt="{{ book.bookName }}" class="book-image" />
+  <h3 class="book-title">{{ book.bookName }}</h3>
+  <p class="book-publisher">{{ book.publisher }}</p>
+  <p class="book-publish-date">{{ book.publishDate }}</p>
+  <p class="book-description">{{ book.description }}</p>
+  <button mat-button (click)="addToWishList(book)">Add to Wishlist</button>
+</div>

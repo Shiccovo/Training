@@ -1,0 +1,23 @@
+<div *ngIf="books.length > 0; else noBooks">
+  <mat-card *ngFor="let book of books" class="book-card">
+    <div class="book-content">
+      <img mat-card-image [src]="book.bookPic" alt="{{ book.bookName }}" class="book-image" />
+      <div class="book-info">
+        <div class="book-header">
+          <mat-card-title>{{ book.bookName }}</mat-card-title>
+          <button mat-icon-button (click)="addToWishList(book)" class="wishlist-button" [disabled]="isInWishList(book)">
+            <mat-icon>{{ isInWishList(book) ? 'favorite' : 'favorite_border' }}</mat-icon>
+          </button>
+        </div>
+        <mat-card-subtitle>{{ book.publishDate }}</mat-card-subtitle>
+        <mat-card-content>
+          <p class="book-description">{{ book.description }}</p>
+        </mat-card-content>
+      </div>
+    </div>
+  </mat-card>
+</div>
+
+<ng-template #noBooks>
+  <p>Please search for books</p>
+</ng-template>

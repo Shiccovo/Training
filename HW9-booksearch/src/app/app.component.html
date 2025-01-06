@@ -1,0 +1,16 @@
+<mat-toolbar class="header">
+  <nav class="navbar"> 
+    <a routerLink="home" class="link" mat-button routerLinkActive="active" ariaCurrentWhenActive="page"
+    [routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', fragment: 'ignored', matrixParams: 'ignored' }">        
+    <mat-icon>home</mat-icon>
+    Home</a>
+
+    <a routerLink="wishlist" class="link" mat-button routerLinkActive="active" ariaCurrentWhenActive="page"
+    [routerLinkActiveOptions]="{ paths: 'exact', queryParams: 'ignored', fragment: 'ignored', matrixParams: 'ignored' }">        
+    <mat-icon>menu</mat-icon>
+    WishList</a>
+  </nav>
+</mat-toolbar>
+
+
+<router-outlet> </router-outlet>

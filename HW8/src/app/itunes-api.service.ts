@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
- 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -11,8 +11,6 @@ export class ItunesApiService {
 
 
   constructor(private http: HttpClient) {}
-
-
 
   searchAlbums(artistName: string): Observable<any> {
     const url = `${this.apiUrl}?term=${artistName}&media=music&entity=album&attribute=artistTerm&limit=200`;

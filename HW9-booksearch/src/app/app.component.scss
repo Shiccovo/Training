@@ -1,0 +1,23 @@
+.header {
+    display: flex;
+    justify-content: center;
+  }
+  
+.navbar {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+
+    &.link {
+        
+        &.active{
+            background-color: var(--mat-sys-primary-container);
+            color: var(--mat-sys-primary);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+.homelink {
+    margin: 0 50px; 
+}

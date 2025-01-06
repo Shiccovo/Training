@@ -1,0 +1,42 @@
+.book-card {
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+  
+  .book-content {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+  .book-image {
+    border-radius: 10px;
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .book-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+  
+  .book-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .wishlist-button {
+    margin-left: auto;
+  }
+  
+  .book-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Number of lines to show */
+    -webkit-box-orient: vertical;
+  }

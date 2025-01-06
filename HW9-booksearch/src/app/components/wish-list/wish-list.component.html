@@ -1,0 +1,20 @@
+<mat-card class="wishlist-card">
+  <mat-card-header>
+    <mat-card-title>Wishlist</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <mat-list>
+        <mat-list-item *ngFor="let book of wishList">
+            <h3>{{ book.bookName }}  
+              <button mat-icon-button (click)="removeFromWishList(book)">
+                <mat-icon>delete</mat-icon>
+              </button>
+          
+          </h3> 
+            
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </mat-card-content>
+</mat-card>
