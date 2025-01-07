@@ -1,0 +1,30 @@
+<div [formGroup]="form" style="margin: 1rem;">
+    
+    <label>
+      <input type="checkbox" formControlName="selectAll" />
+      Select All
+    </label>
+  
+    <div formArrayName="items" style="margin-left: 1rem;">
+      <div *ngFor="let ctrl of items.controls; let i = index">
+        <label>
+          <input type="checkbox" [formControlName]="i" />
+          {{ itemList[i] }}
+        </label>
+      </div>
+    </div>
+  
+    <button type="button" (click)="clearAll()" style="margin-top: 1rem;">
+      Clear All
+    </button>
+  </div>
+  
+  <hr />
+  
+  <div style="margin: 1rem;">
+    <h3>Selected Values:</h3>
+    <ul>
+      <li *ngFor="let val of selectedValues">{{ val }}</li>
+    </ul>
+  </div>
+  
