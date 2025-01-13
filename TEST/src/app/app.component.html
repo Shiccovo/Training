@@ -1,0 +1,7 @@
+<router-outlet></router-outlet>
+<app-reactive (transferData)="handleData($event)"></app-reactive>
+
+<div *ngFor="let item of data">
+  <h3>Name: {{ item.name }}</h3>
+  <p>Email: {{ item.email }}</p>
+</div>

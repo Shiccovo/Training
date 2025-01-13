@@ -1,0 +1,67 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+.container{
+    position: relative;
+    width: 400px;
+    height: 300px;
+
+}
+
+.bg{
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    object-fit:cover;
+    z-index: -1;
+}
+
+.popup{
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    transform: translateX(-50%);
+
+    width: 220px;
+    height: 60px;
+
+    border-color: aliceblue;
+    border: 2px solid dimgrey;
+    border-radius: 12px;
+
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: black;
+    
+
+    z-index: 2;
+    .pic-in-dialog{
+        width: auto;
+        height: 90%;
+        object-fit: cover;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    #download_icon{
+        width: auto;
+        height: 80%;
+    }
+}
+
+
+
+.text-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:12px;
+}
+#title{
+    color: white;
+}
+#status{
+    color: rgb(1, 106, 238);
+}
+

@@ -1,0 +1,15 @@
+<form #testForm="ngForm" (ngSubmit)="onSubmit(testForm)">
+
+    <div>
+        <label for="name"> name</label>
+        <input type="text" id="name" name="name" #name="ngModel" ngModel>
+    </div>
+
+    <div>
+
+        <label for="email">email</label>
+        <input type="text" id="email" name="email" [(ngModel)]="user.email">
+    </div>
+    <button type="submit">Submit</button>
+
+</form>

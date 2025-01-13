@@ -1,0 +1,22 @@
+<form [formGroup]="testForm" (ngSubmit)="onSubmit(testForm)"> 
+    <p>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" formControlName="name">
+    </p>
+
+    <p>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email" formControlName="email">
+    </p>
+
+    <div *ngIf="!name?.valid && (name?.touched || name?.dirty)">
+        <div [hidden]="!name?.errors?.['required']">Name is required</div>
+        <div *ngIf="name?.errors?.['gte']">Name must be at least 5 characters</div>
+    </div>
+
+    <button type="submit" [disabled]="!testForm.valid">Submit</button>
+
+    <div *ngIf="testForm.get('name')?.valid && !testForm.get('name')?.touched">
+
+    </div>
+</form>

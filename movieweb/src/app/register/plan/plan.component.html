@@ -1,0 +1,60 @@
+<div class="container">
+    <p>STEP 3 OF 3</p>
+    <h1>Choose the plan that is right for you</h1>
+    
+    <div class="feature-item">
+        <mat-icon color="primary">done</mat-icon>
+        <p>Just a few more steps and you are done!</p>
+    </div>
+    <div class="feature-item">
+        <mat-icon color="primary">done</mat-icon>
+        <p>Recommendations just for you.</p>
+    </div>
+    <div class="feature-item">
+        <mat-icon color="primary">done</mat-icon>
+        <p>Change or cancel your plan anytime.</p>
+    </div>
+
+    <div class="plan-container">
+
+        <div class="plan-column titles">
+            <div class="plan-cell"></div>
+            <div class="plan-cell">Monthly price</div>
+            <div class="plan-cell">Video quality</div>
+            <div class="plan-cell">Resolution</div>
+            <div class="plan-cell">Watch on your TV, computer, mobile phone and tablet</div>
+        </div>
+
+        <div class="plan-column" [class.selected]="selectedPlan === 'basic'">
+            <div class="plan-cell">
+                <button mat-raised-button class="plan-button" [class.active]="selectedPlan === 'basic'" (click)="selectPlan('basic')">Basic</button>
+            </div>
+            <div class="plan-cell">9.99$</div>
+            <div class="plan-cell">Good</div>
+            <div class="plan-cell">480p</div>
+            <div class="plan-cell"><mat-icon>done</mat-icon></div>
+        </div>
+
+        <div class="plan-column" [class.selected]="selectedPlan === 'standard'">
+            <div class="plan-cell">
+                <button mat-raised-button class="plan-button" [class.active]="selectedPlan === 'standard'" (click)="selectPlan('standard')">Standard</button>
+            </div>
+            <div class="plan-cell">15.59$</div>
+            <div class="plan-cell">Better</div>
+            <div class="plan-cell">1080p</div>
+            <div class="plan-cell"><mat-icon>done</mat-icon></div>
+        </div>
+
+        <div class="plan-column" [class.selected]="selectedPlan === 'premium'">
+            <div class="plan-cell">
+                <button mat-raised-button class="plan-button" [class.active]="selectedPlan === 'premium'" (click)="selectPlan('premium')">Premium</button>
+            </div>
+            <div class="plan-cell">19.99$</div>
+            <div class="plan-cell">Best</div>
+            <div class="plan-cell">4K+HDR</div>
+            <div class="plan-cell"><mat-icon>done</mat-icon></div>
+        </div>
+    </div>
+
+    <button mat-raised-button color="warn" type="submit" (click)="onSubmit()" class="next-button">Next</button>
+</div>

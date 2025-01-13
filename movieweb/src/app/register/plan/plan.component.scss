@@ -1,0 +1,115 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
+    margin-top: 420px;
+    padding: 40px;
+    margin-bottom: 30px;
+    
+    .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        mat-icon {
+            color: red;
+        }
+    }
+
+    .plan-container {
+        display: flex;
+        flex-direction: row;
+
+        align-items: flex-start;
+
+        .plan-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #ccc;
+
+            &.selected {
+                .plan-cell {
+                    color: red;
+                    mat-icon {
+                        color: red;
+                    }
+                }
+            }
+
+            &.titles {
+                flex: 1.2;
+                margin-top: 30px;
+                
+                .plan-cell {
+                    text-align: left;
+                    color: #000000;
+                    font-weight: 10px;
+                    padding-right: 20px;
+                    justify-content: flex-start;
+                    white-space: nowrap;
+                }
+            }
+
+            .plan-cell {
+                padding: 15px;
+                text-align: center;
+                min-height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .plan-button {
+                    width: 120px;
+                    height: 80px;
+                    background-color: #b87d7d;
+                    color: white;
+                    border: none;
+                    border-radius: 0;
+                    font-size: 15px;
+                    position: relative;
+
+                    &.active {
+                        background-color: red;
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            bottom: -10px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 0;
+                            height: 0;
+                            border-left: 10px solid transparent;
+                            border-right: 10px solid transparent;
+                            border-top: 10px solid red;
+                        }
+                    }
+
+                    &:hover {
+                        background-color: #c58585, 10%;
+                    }
+                }
+
+                mat-icon {
+                    color: #666;
+                }
+            }
+        }
+    }
+
+    .next-button {
+        width: 30%;
+        height: 50px;
+        background-color: red;
+        color: white;
+        align-self: center;
+        margin-top: 50px;
+
+        gap: 20px;
+
+        &:hover {
+            background-color: #c58585, 10%;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+<app-navbar [showLogin]="false"></app-navbar>
+
+<div class="home-container">
+    <div class="overlay"></div>
+
+    <div class="login-container">
+        
+        <h1 class="title">Sign in</h1>
+        <div class="input-form">
+
+            <!-- Email or phone number Input -->
+            <mat-form-field>
+                <mat-label>Email or phone number</mat-label>
+                <input class="input-container" matInput type="text" required>
+                <mat-error>Please enter a valid email or phone number</mat-error>  
+            </mat-form-field>
+
+            <!-- Password Input -->
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input class="input-container" matInput type="password" required>
+                <mat-error>Please enter a valid password</mat-error>  
+            </mat-form-field>
+
+            <!-- Sign in button -->
+            <button mat-raised-button color="warn" type="submit">Sign in</button>
+        </div>
+
+        <!-- Remember Me & Need Help -->
+        <div class="additional-options">
+            <label class="custom-checkbox">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+                Remember me
+              </label>
+            <a href="#" class="help-link">Need Help?</a>
+        </div>
+
+        <div class="Signup">
+            <p>New to Netflix? <a href="/register">Sign up now.</a></p>
+        </div>
+
+        <div class="notice">
+            <p>This page is protected by Google reCAPTCHA to ensure you're not a bot. <a href="https://support.google.com/recaptcha/?hl=en">Learn more.</a></p>
+        </div>
+    </div>
+</div>

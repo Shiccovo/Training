@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 60vh;
+
+
+
+    router-outlet{
+        width: 50%;
+        height: 50vh;
+    }
+
+}
