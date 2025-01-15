@@ -12,14 +12,18 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './pages/login/login.component';
-
+import { MovieListComponent } from './movie-list/movie-list.component';
+import { MovieItemComponent } from './movie-item/movie-item.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DownloadComponent,
-    LoginComponent
+    LoginComponent,
+    MovieListComponent,
+    MovieItemComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,8 @@ import { LoginComponent } from './pages/login/login.component';
     SharedModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()

@@ -6,25 +6,52 @@
     <div class="login-container">
         
         <h1 class="title">Sign in</h1>
-        <div class="input-form">
+        <form class="input-form" (ngSubmit)="onSubmit()" #formRef="ngForm">
 
             <!-- Email or phone number Input -->
             <mat-form-field>
-                <mat-label>Email or phone number</mat-label>
-                <input class="input-container" matInput type="text" required>
-                <mat-error>Please enter a valid email or phone number</mat-error>  
+                <mat-label>Email</mat-label>
+                <input 
+                class="input-container" 
+                matInput 
+                type="text" 
+                name="email"
+                required
+                email 
+                [(ngModel)]="email"
+                #emailInput="ngModel">
+
+                <mat-error *ngIf="emailInput.touched && emailInput.errors?.['required']">
+                    Email is required
+                </mat-error>
+                <mat-error *ngIf="emailInput.touched && emailInput.errors?.['email']">
+                    Please enter a valid email address
+                </mat-error>
             </mat-form-field>
 
             <!-- Password Input -->
             <mat-form-field>
                 <mat-label>Password</mat-label>
-                <input class="input-container" matInput type="password" required>
-                <mat-error>Please enter a valid password</mat-error>  
+                <input class="input-container"
+                class="input-container" 
+                matInput 
+                type="password" 
+                name="password"
+                required
+                minlength="8"
+                [(ngModel)]="password"
+                #passwordInput="ngModel">
+                <mat-error *ngIf="passwordInput.touched && passwordInput.errors?.['required']">
+                    Password is required
+                </mat-error>
+                <mat-error *ngIf="passwordInput.touched && passwordInput.errors?.['minlength']">
+                    Password must be at least 8 characters
+                </mat-error>
             </mat-form-field>
 
             <!-- Sign in button -->
-            <button mat-raised-button color="warn" type="submit">Sign in</button>
-        </div>
+            <button mat-raised-button color="warn" type="submit" [disabled]="!formRef.form.valid">Sign in</button>
+        </form>
 
         <!-- Remember Me & Need Help -->
         <div class="additional-options">

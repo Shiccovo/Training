@@ -7,8 +7,8 @@
             <h1>Unlimited movies, TV shows, and more.</h1>
             <p> Stating at $6.99. Cancel anytime.</p>
             <div class="input-container">
-                <input type="text" placeholder="Email Address" class="input-text">
-                <button class="input-button">Get Started</button>
+                <input type="text" placeholder="Email Address" class="input-text" [(ngModel)]="email">
+                <button class="input-button" (click)="goRegister()" >Get Started</button>
             </div>
         </div>
     </div>

@@ -9,5 +9,12 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
+  email: string = '';
+  password: string = '';
 
+  constructor(private router: Router){}
+
+  onSubmit(){
+    window.location.href ='/movie-list';
+  }
 }

@@ -1,0 +1,71 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    label{
+        margin-bottom: 10px;
+    }
+
+    input{
+        margin-bottom: 10px;
+        width: 500px;
+        height: 30px;
+    }
+
+    button{
+        width: 200px;
+        height: 40px;
+        border-radius: 10px;
+        background-color: rgb(187, 67, 42);
+        color: white;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+}
+
+.form-field {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  #message{
+    width: 500px;
+    height: 100px;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.submission-receipt {
+
+  background-color: #ffffff;
+  width: 800px;
+
+  h3 {
+    color: rgb(52, 200, 15);
+    margin-bottom: 15px;
+    height: 150px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+  }
+
+  .receipt-details {
+    p {
+      margin: 10px 0;
+    }
+    .text-container{
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+  }
+}

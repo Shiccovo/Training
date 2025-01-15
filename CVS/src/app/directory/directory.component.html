@@ -1,0 +1,18 @@
+<div class="directory-container">
+    <h2>Employee Directory</h2>
+    
+    <div class="employee-grid">
+        <div class="employee-card" *ngFor="let employee of employees">
+            <div class="employee-avatar">
+                <img [src]="employee.avatar" [alt]="employee.firstName + ' ' + employee.lastName"
+                     onerror="this.src='assets/default-avatar.png'">
+            </div>
+            <div class="employee-info">
+                <h3>{{employee.firstName}} {{employee.lastName}}</h3>
+                <a [href]="'mailto:' + employee.email" class="email-link">
+                    {{employee.email}}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

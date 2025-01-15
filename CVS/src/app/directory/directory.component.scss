@@ -1,0 +1,60 @@
+.directory-container {
+    padding: 20px;
+    width: 1200px;
+    margin: 0 auto;
+
+    h2 {
+        color: #333;
+        margin-bottom: 30px;
+        text-align: center;
+        font-size: 2em;
+    }
+}
+
+.employee-grid {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
+.employee-card {
+    display: flex;
+    align-items: center;
+    height: 120px;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+    gap: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(240, 240, 240);
+
+
+    .employee-avatar {
+        margin-right: 20px;
+        
+        img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    .employee-info {
+
+        h3 {
+            margin: 0 0 10px 0;
+            color: #000000;
+            font-size: 1.2em;
+
+        }
+
+        .email-link {
+            color: rgb(33, 64, 217);
+            text-decoration: none;
+            font-size: 1.1em;
+            
+        }
+    }
+}
