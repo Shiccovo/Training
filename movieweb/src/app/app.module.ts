@@ -1,20 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { DownloadComponent } from './pages/home/download/download.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from './shared/shared.module';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HttpClientModule } from '@angular/common/http';
+
+// Material Modules
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+
+// Components
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
+import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
-import { MovieListComponent } from './movie-list/movie-list.component';
-import { MovieItemComponent } from './movie-item/movie-item.component';
-import { HttpClientModule } from '@angular/common/http';
+import { DownloadComponent } from './pages/home/download/download.component';
+import { YouTubePlayerModule } from '@angular/youtube-player';
+import { MovieListModule } from './pages/movie-list/movie-list.module';
+import { AuthStateService } from './services/auth-state.service';
 
 @NgModule({
   declarations: [
@@ -22,22 +29,27 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     DownloadComponent,
     LoginComponent,
-    MovieListComponent,
-    MovieItemComponent
   ],
   imports: [
+    MovieListModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
     SharedModule,
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    HttpClientModule
+    MatButtonModule,
+    MatDialogModule,
+    MatIconModule,
+    YouTubePlayerModule
   ],
-  providers: [
-    provideAnimationsAsync()
-  ],
+  providers: [AuthStateService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private authStateService: AuthStateService) {
+  }
+}

@@ -1,0 +1,21 @@
+<nav class="navbar">
+  <app-navbar></app-navbar>
+
+</nav>
+
+
+
+<div class="movie-list">
+  <div class="movie-list-block">
+    <app-movie-item
+      *ngFor="let m of movies"
+      [movie]="m"
+      class="movie-item"
+    >
+    </app-movie-item>
+  </div>
+
+  <div *ngIf="loading" class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>

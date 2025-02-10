@@ -1,10 +1,21 @@
-<nav class="navbar">
-    <div class="logo">
-        <img src="assets/img/LOGO.png" alt="LOGO">
-    </div>
+<div class="navbar" [style.backgroundColor]="backgroundColor">
 
-    <div class="login-button" *ngIf="showLogin">
-        <button class="button" (click)="onSubmit()">Log in </button>
-    </div>
+  <a [routerLink]="['/']">
+    <img src="assets/img/LOGO.png" alt="logo">
+  </a>
     
-</nav>
+
+
+
+  <div class="user-info" *ngIf="currentUser">
+    Hello, {{currentUser.username}}
+  </div>
+
+  <div class="actions">
+    <!-- If no user, show "Log in" button -->
+    <button *ngIf="!currentUser" class="button" (click)="goLogin()">Log in</button>
+
+    <!-- If user is logged in, show "Log out" button -->
+    <button *ngIf="currentUser" class="button" (click)="onLogout()">Log out</button>
+  </div>
+</div>

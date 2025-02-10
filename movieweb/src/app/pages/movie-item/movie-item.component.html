@@ -1,0 +1,25 @@
+<div class="movie-card" (click)="onMovieSelected()">
+    <div class="overlay" [style.backgroundImage]="'url(' + (movie.poster_path ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path : 'assets/placeholder.png') + ')'">
+    </div>
+
+    <img
+        [src]="movie.poster_path ? 'https://image.tmdb.org/t/p/w500' + movie.poster_path : 'assets/placeholder.png'"
+        alt="{{ movie.title }}"
+        class="movie-poster"
+    />
+
+  <h3>{{movie.title}}</h3>
+
+  <div class="year-lang-rating">
+    <span class="info">{{ movie.release_date | date: 'yyyy' }}</span>
+    <span class="info">{{ movie.original_language | uppercase }}</span>
+    <span class="info">{{ movie.vote_average }}</span>
+  </div>
+  <p>
+    {{ movie.overview | slice:0:100 }}{{ movie.overview.length > 100 ? '...' : '' }}
+  </p>
+
+  <button class="details-button" (click)="onMovieSelected()">More Details</button>
+
+    
+</div>

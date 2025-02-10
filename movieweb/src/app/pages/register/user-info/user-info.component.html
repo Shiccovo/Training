@@ -1,0 +1,48 @@
+<div class="container">
+    <p>STEP 2 OF 3</p>
+    <h1>Create your Username && Add youir Tmdb Api Key</h1>
+    <p>Just a few more steps and you are done!</p>
+    <p>We hate paperworks too!</p>
+
+    <form (ngSubmit)="onSubmit()" #formRef="ngForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput 
+                type="text" 
+                name="username" 
+                [(ngModel)]="username" 
+                required 
+                minlength="4"
+                maxlength="10"
+                #usernameInput="ngModel">
+            <mat-error *ngIf="usernameInput.touched && usernameInput.errors?.['required']">
+                Username is required
+            </mat-error>
+            <mat-error *ngIf="usernameInput.touched && usernameInput.errors?.['minlength']">
+                Username must be at least 4 characters
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>TMDB API Key</mat-label>
+            <input matInput 
+                type="text" 
+                name="tmdbKey"
+                [(ngModel)]="tmdbKey" 
+                required
+                minlength="10"
+                #tmdbkeyInput="ngModel">
+            <mat-error *ngIf="tmdbkeyInput.touched && tmdbkeyInput.errors?.['required']">
+                TMDB API Key is required
+            </mat-error>
+            <mat-error *ngIf="tmdbkeyInput.touched && tmdbkeyInput.errors?.['minlength']">
+                TMDB API Key must be at least 10 characters
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button 
+                color="warn" 
+                type="submit" 
+                [disabled]="!formRef.form.valid">Next</button>
+    </form>
+</div>

@@ -5,4 +5,15 @@
     box-sizing: border-box;
 }
 
+.trailer-dialog {
+  .mat-mdc-dialog-container {
+    padding: 0;
+  }
+  
+  .mat-mdc-dialog-surface {
+    background: black;
+    overflow: hidden;
+  }
+}
+
 

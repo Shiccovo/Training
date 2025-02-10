@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +9,18 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   email: string = '';
+  
+  constructor(private router: Router) {}
 
   goRegister() {
     if (this.email) {
-      window.location.href = `/register/password?email=${encodeURIComponent(this.email)}`;
+      this.router.navigate(['/register'], {
+        queryParams: { email: this.email }
+      });
+      
+
     } else {
-      window.location.href = '/register';
+      this.router.navigate(['/register']);
     }
   }
 }

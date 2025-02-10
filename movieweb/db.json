@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "test@example.com",
+      "password": "password123",
+      "plan": "basic"
+    }
+  ],
+  "profiles": [
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "Test User",
+      "avatar": "https://example.com/avatar.jpg"
+    }
+  ]
+} 

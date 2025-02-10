@@ -1,0 +1,21 @@
+<div class="dialog-container">
+  <div class="dialog-header">
+    <button mat-icon-button (click)="close()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  
+  <div class="video-container">
+    <youtube-player 
+      [videoId]="data.videoKey"
+      [width]="videoWidth"
+      [height]="videoHeight"
+      [playerVars]="{
+        autoplay: 1,
+        controls: 1,
+        modestbranding: 1
+      }"
+    >
+    </youtube-player>
+  </div>
+</div>
