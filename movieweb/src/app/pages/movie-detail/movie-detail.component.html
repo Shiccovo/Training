@@ -1,5 +1,9 @@
 <div class="movie-detail" *ngIf="movie">
 
+  <div class="back-button" (click)="goBack()">
+    <mat-icon>arrow_back</mat-icon>
+  </div>
+
   <div class="movie-backdrop"
     [style.backgroundImage]="'url(https://image.tmdb.org/t/p/original' + movie.backdrop_path + ')'">
     <div class="overlay"></div>

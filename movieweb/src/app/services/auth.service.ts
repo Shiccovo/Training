@@ -4,7 +4,7 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { AuthStateService } from './auth-state.service';
 import { CredentialFormValues, ResAuth, SignupValues } from '../core/interfaces/auth/auth.interface';
-import { environment } from '../environment';
+import { environment } from '../../environments/environment';
 
 export interface AuthDto {
   accessToken: string;
@@ -63,10 +63,6 @@ export class AuthService {
 
 
 
-  register(signUpValues: SignupValues): Observable<ResAuth> {
-    return this.http.post<ResAuth>(`${this.apiUrl}/auth/signup`, signUpValues)
-
-  }
 
   login(credentials: CredentialFormValues): Observable<any> {
     return this.http.post<AuthResponse>(`${this.apiUrl}/auth/signin`, credentials)

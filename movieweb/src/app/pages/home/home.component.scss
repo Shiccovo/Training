@@ -95,6 +95,21 @@ p{
         .input-text{
             cursor: pointer;
         }
+
+        .enjoy-button{
+            width: 200px;
+            height: 50px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            
+            &:hover {
+                background-color: #cc0000;
+            }
+        }
     }
 }
 

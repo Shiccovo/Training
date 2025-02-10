@@ -6,9 +6,15 @@
         <div class="first-page">
             <h1>Unlimited movies, TV shows, and more.</h1>
             <p> Stating at $6.99. Cancel anytime.</p>
-            <div class="input-container">
+
+            <div *ngIf="!currentUser" class="input-container">
                 <input type="text" placeholder="Email Address" class="input-text" [(ngModel)]="email">
-                <button class="input-button" (click)="goRegister()" >Get Started</button>
+                <button class="input-button" (click)="goRegister()">Get Started</button>
+
+            </div>
+            
+            <div *ngIf="currentUser">
+                <button class="enjoy-button" (click)="goToMovies()">Enjoy your movie</button>
             </div>
         </div>
     </div>

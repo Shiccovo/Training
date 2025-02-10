@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { AuthStateService } from '../../services/auth-state.service';
+import { User } from '../../core/interfaces/auth/auth.interface';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +12,16 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   email: string = '';
+  currentUser: User | null = null;
   
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService,    
+    private authStateService: AuthStateService) {
+    this.authStateService.user$.subscribe(user => {
+      this.currentUser = user;
+    });
+  }
+
+
 
   goRegister() {
     if (this.email) {
@@ -22,6 +33,10 @@ export class HomeComponent {
     } else {
       this.router.navigate(['/register']);
     }
+  }
+
+  goToMovies() {
+    this.router.navigate(['/movie-list']);
   }
 }
 

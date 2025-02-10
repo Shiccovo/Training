@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 import { MovieService } from '../../shared/services/movie.service';
 import { Movie } from '../../core/interfaces/movie.interface';
 import { MovieItemComponent } from '../movie-item/movie-item.component';
@@ -7,8 +8,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { SharedModule } from '../../shared/shared.module';
-
-
+import { ScrollService } from '../../services/scroll.service';
 
 @Component({
   selector: 'app-movie-list',
@@ -19,21 +19,35 @@ import { SharedModule } from '../../shared/shared.module';
 
 })
 
-export class MovieListComponent {
+export class MovieListComponent implements OnInit, OnDestroy {
   currentPage = 1;
   showLogin = false;
-  movies: Movie[] =[];
+  movies: Movie[] = [];
   loading = false;
 
-  constructor(private movieService: MovieService){}
+  constructor(
+    private movieService: MovieService,
+    private scrollService: ScrollService,
+    private router: Router
+  ) {}
 
-
-  ngOnInit(){
+  ngOnInit() {
     this.getMovieData();
+    setTimeout(() => {
+      window.scrollTo(0, this.scrollService.getScrollPosition());
+    });
+  }
+
+  ngOnDestroy() {
+    this.scrollService.saveScrollPosition(window.pageYOffset);
+  }
+
+  onMovieClick(movieId: number) {
+    this.scrollService.saveScrollPosition(window.pageYOffset);
+    this.router.navigate(['/movie', movieId]);
   }
 
   getMovieData() {
-
     if(this.loading) return;
     
     this.loading = true;

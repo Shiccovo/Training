@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MovieService } from '../../shared/services/movie.service';
 import { Movie } from '../../core/interfaces/movie.interface';
 import { LimitArrayPipe } from '../../shared/pipes/limit-array.pipe';
 import { TrailerDialogComponent } from '../../trailer-dialog/trailer-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { ScrollService } from '../../services/scroll.service';
+
 
 @Component({
   selector: 'app-movie-detail',
@@ -17,7 +19,9 @@ export class MovieDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private movieService: MovieService,
+    private scrollService: ScrollService,
     private dialog: MatDialog
   ) {}
 
@@ -50,6 +54,18 @@ export class MovieDetailComponent implements OnInit {
       } else {
         console.warn('No trailer found!');
       }
+    });
+  }
+
+  goBack() {
+    this.router.navigate(['/movie-list']).then(() => {
+      setTimeout(() => {
+        const savedPosition = this.scrollService.getScrollPosition();
+        window.scrollTo({
+          top: savedPosition,
+          behavior: 'smooth'
+        });
+      },100);
     });
   }
 }

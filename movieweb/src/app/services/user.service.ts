@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { HttpClient } from "@angular/common/http";
-import { environment } from "../environment";
+import { environment } from "../../environments/environment";
 
 export interface UserData {
   email: string;
@@ -56,7 +56,7 @@ export class UserService {
 
 
   submitRegistration() {
-    return this.http.post(`${this.apiUrl}/signup`, this.registerData);
+    return this.http.post(`${this.apiUrl}/auth/signup`, this.registerData);
   }
 
 

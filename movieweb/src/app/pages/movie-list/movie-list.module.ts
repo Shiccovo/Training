@@ -6,7 +6,8 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SharedModule } from '../../shared/shared.module';
-
+import { ScrollService } from '../../services/scroll.service';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
     declarations: [
@@ -19,10 +20,11 @@ import { SharedModule } from '../../shared/shared.module';
         InfiniteScrollModule,
         MatProgressSpinnerModule,
         SharedModule,
-        
+        MatIconModule
+
       ],
     
-    providers: [],
+    providers: [ScrollService],
     bootstrap: [MovieListComponent]
   })
   export class MovieListModule { }
